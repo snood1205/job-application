@@ -3,7 +3,7 @@ package com.sadofftext.jobapplication;
 /**
 * The class Address stores someone's address.
 * While the class might seem trivial,
-* it is simpler to have a class for Addresses
+* it is simpler to have a class for addresses
 * than to have many constructors for Applicant.
 */
 public class Address{

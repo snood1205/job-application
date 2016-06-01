@@ -3,7 +3,7 @@ package com.sadofftext.jobapplication;
 /**
 * The class Name stores someone's name.
 * While the class might seem trivial,
-* it is simpler to have a class for Names
+* it is simpler to have a class for names
 * than to have many constructors for Applicant.
 */
 public class Name{

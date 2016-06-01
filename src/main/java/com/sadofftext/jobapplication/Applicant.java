@@ -2,5 +2,6 @@ package com.sadofftext.jobapplication;
 
 public class Applicant{
     private Name name; 
-    private 
+    private Address address;
+    
 }
