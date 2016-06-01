@@ -29,6 +29,9 @@ package com.sadofftext.jobapplication;
 * While the class might seem trivial,
 * it is simpler to have a class for school information
 * than to have many constructors for Applicant.
+*
+* @since 1.0.0
+* @author Eli Sadoff
 */
 public class School {
   /* The name of the school */

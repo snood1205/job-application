@@ -30,6 +30,9 @@ package com.sadofftext.jobapplication;
 * While the class might seem trivial,
 * it is simpler to have a class for SSNs
 * than to have many constructors for Applicant.
+*
+* @since 1.0.0
+* @author Eli Sadoff
 */
 public class SocialSecurity {
   /* Stores the first three numbers */

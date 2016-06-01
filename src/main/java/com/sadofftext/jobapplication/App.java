@@ -27,6 +27,15 @@ package com.sadofftext.jobapplication;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
+/**
+* This class should not
+* exist in the final product.
+* It is used to see how the forms
+* look in the interim.
+* 
+* TODO: Remove before publishing
+* @author Eli Sadoff
+*/
 public class App {
   public static void main(String[] args) {
     JPanel form = Address.getForm();

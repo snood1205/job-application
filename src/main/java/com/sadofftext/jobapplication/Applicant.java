@@ -24,6 +24,14 @@
 
 package com.sadofftext.jobapplication;
 
+/**
+* This class contains
+* all the information of 
+* the applicant.
+*
+* @since 1.0.0
+* @author Eli Sadoff
+*/
 public class Applicant {
   /* The name */
   private Name name; 

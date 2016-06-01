@@ -29,6 +29,9 @@ package com.sadofftext.jobapplication;
 * While the class might seem trivial,
 * it is simpler to have a class for phone numbers
 * than to have many constructors for Applicant.
+*
+* @since 1.0.0
+* @author Eli Sadoff
 */
 public class PhoneNumber {
   /* Stores the area code */
