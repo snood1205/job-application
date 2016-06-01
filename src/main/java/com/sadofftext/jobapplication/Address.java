@@ -1,5 +1,8 @@
 package com.sadofftext.jobapplication;
 
+import javax.swing.*;
+import java.awt.*;
+
 /**
 * The class Address stores someone's address.
 * While the class might seem trivial,
@@ -150,5 +153,82 @@ public class Address{
             addressLine = getAddressLine1() + "\n" + getAddressLine2();
         }
         return addressLine + "\n" + getCity() + ", " + getState() + "\n" + getZipcode();
+    }
+
+    public JPanel getForm(){
+        String[] stateAbbr = {"AK", "AL", "AR", "AZ", "CA", "CO", "CT", "DC", "DE", "FL", "GA", "GU", "HI", "IA",
+                              "ID", "IL", "IN", "KS", "KY", "LA", "MA", "MD", "ME", "MI", "MN", "MO", "MS", "MT", 
+                              "NC", "ND", "NE", "NH", "NJ", "NM", "NV", "NY", "OH", "OK", "OR", "PA", "PR", "RI", 
+                              "SC", "SD", "TN", "TX", "UT", "VA", "VI", "VT", "WA", "WI", "WV", "WY"};
+        JLabel lAddressLine1 = new JLabel("Address Line 1");
+        JLabel lAddressLine2 = new JLabel("Address Line 2");
+        JLabel lCity = new JLabel("City");
+        JLabel lState = new JLabel("State");
+        JLabel lZipcode = new JLabel("Zip Code");
+        JTextField addressLine1 = new JTextField(40);
+        JTextField addressLine2 = new JTextField(40);
+        JTextField city = new JTextField(20);
+        JComboBox state = new JComboBox(stateAbbr);
+        JTextField zipcode = new JTextField(6);
+
+    }
+
+    public static String getState(String stateAbbr){
+        switch (stateAbbr) {
+            case "AK": return "Alaska";
+            case "AL": return "Alabama";
+            case "AR": return "Arkansas";
+            case "AZ": return "Arizona";
+            case "CA": return "California";
+            case "CO": return "Colorado";
+            case "CT": return "Connecticut";
+            case "DC": return "Washington, DC";
+            case "DE": return "Delaware";
+            case "FL": return "Florida";
+            case "GA": return "Georgia";
+            case "GU": return "Guam";
+            case "HI": return "Hawai'i";
+            case "IA": return "Iowa";
+            case "IL": return "Illinois";
+            case "IN": return "Indiana";
+            case "KS": return "Kansas";
+            case "KY": return "Kentucky";
+            case "LA": return "Louisiana";
+            case "MA": return "Massachusetts";
+            case "MD": return "Maryland";
+            case "ME": return "Maine";
+            case "MI": return "Michigan";
+            case "MN": return "Minnesota";
+            case "MO": return "Missouri";
+            case "MS": return "Mississippi";
+            case "MT": return "Montana";
+            case "NC": return "North Carolina";
+            case "ND": return "North Dakota";
+            case "NE": return "Nebraska";
+            case "NH": return "New Hampshire";
+            case "NJ": return "New Jersey";
+            case "NM": return "New Mexico";
+            case "NV": return "Nevada";
+            case "NY": return "New York";
+            case "OH": return "Ohio";
+            case "OK": return "Oklahoma";
+            case "OR": return "Oregon";
+            case "PA": return "Pennsylvania";
+            case "PR": return "Puerto Rico";
+            case "RI": return "Rhode Island";
+            case "SC": return "South Carolina";
+            case "SD": return "South Dakota";
+            case "TN": return "Tennessee";
+            case "TX": return "Texas";
+            case "UT": return "Utah";
+            case "VA": return "Virginia";
+            case "VI": return "Virgin Islands";
+            case "VT": return "Vermont";
+            case "WA": return "Washington";
+            case "WI": return "Wisconsin";
+            case "WV": return "West Virginia";
+            case "WY": return "Wyoming";
+            default: return "";
+        }
     }
 }
