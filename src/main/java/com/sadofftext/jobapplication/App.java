@@ -27,12 +27,12 @@ package com.sadofftext.jobapplication;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-public class App{
-    public static void main(String[] args){
-        JPanel form = Address.getForm();
-        JFrame frame = new JFrame();
-        frame.add(form);
-        frame.pack();
-        frame.setVisible(true);
-    }
+public class App {
+  public static void main(String[] args) {
+    JPanel form = Address.getForm();
+    JFrame frame = new JFrame();
+    frame.add(form);
+    frame.pack();
+    frame.setVisible(true);
+  }
 }
