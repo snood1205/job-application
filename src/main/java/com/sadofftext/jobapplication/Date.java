@@ -24,6 +24,16 @@
 
 package com.sadofftext.jobapplication;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.util.stream.IntStream;
+
+import javax.swing.JPanel;
+import javax.swing.JLabel;
+import javax.swing.JComboBox;
+
 /**
 * The class Date stores a date.
 * While the class might seem trivial,
@@ -155,4 +165,80 @@ public class Date {
     String year = Integer.toString(getYear());
     return month + " " + day + ", " + year;
   }
+
+  public static JPanel getForm() {
+    Integer[] month31 = IntStream.rangeClosed(1,31).boxed().toArray( Integer[]::new );
+    Integer[] month30 = IntStream.rangeClosed(1,30).boxed().toArray( Integer[]::new );
+    Integer[] month29 = IntStream.rangeClosed(1,29).boxed().toArray( Integer[]::new );
+    Integer[] month28 = IntStream.rangeClosed(1,28).boxed().toArray( Integer[]::new );
+    Integer[] months = IntStream.rangeClosed(1,12).boxed().toArray( Integer[]::new );
+    Integer[] years = IntStream.rangeClosed(1900,2016).boxed().toArray( Integer[]::new );
+
+    JPanel panel = new JPanel();
+    GridBagLayout gridbag = new GridBagLayout();
+    GridBagConstraints c = new GridBagConstraints();
+    panel.setLayout(gridbag);
+
+    JComboBox<Integer> month = new JComboBox<Integer>(months);
+    JComboBox<Integer> year = new JComboBox<Integer>(years);
+    JComboBox<Integer> day = new JComboBox<Integer>();
+
+    month.addActionListener(new ActionListener(){
+      public void actionPerformed(ActionEvent e){
+        Integer item = month.getSelectedIndex() + 1;
+        boolean leap = ((int)year.getSelectedItem() % 4 == 0);
+        if(item == 28 && leap) {
+          day = new JComboBox<Integer>(month29);
+        } else if(item == 28) {
+          day = new JComboBox<Integer>(month28);
+        } else if(item == 4 || item == 6 || item == 9 || item == 11) {
+          day = new JComboBox<Integer>(month30);
+        } else {
+          day = new JComboBox<Integer>(month31);
+        }
+      }
+    });
+
+    JLabel info = new JLabel("Select date in MM/DD/YYYY format");
+    JLabel slash = new JLabel("/");
+
+    c.gridwidth = GridBagConstraints.REMAINDER;
+    c.gridx = 0;
+    c.gridy = 0;
+    panel.add(info, c);
+
+    c.gridy = 1;
+    c.gridwidth = 1;
+    panel.add(month, c);
+
+    c.gridx = 1;
+    panel.add(slash, c);
+
+    c.gridx = 2;
+    panel.add(day, c);
+
+    c.gridx = 3;
+    panel.add(slash, c);
+
+    c.gridx = 4;
+    panel.add(year, c);
+
+    return panel;
+  }
+
+  private class DateForm{
+    private Integer[] months = IntStream.rangeClosed(1,12).boxed().toArray( Integer[]::new );
+    private Integer[] years = IntStream.rangeClosed(1900,2016).boxed().toArray( Integer[]::new ); 
+    private JComboBox<Integer> month = new JComboBox<Integer>(months);
+    private JComboBox<Integer> year = new JComboBox<Integer>(years);
+    private JComboBox<Integer> day = new JComboBox<Integer>();
+
+    public Integer[] getMonth(int len){
+      return IntStream.rangeClosed(1,len).boxed().toArray( Integer[]::new );
+    }
+
+    public 
+  }
 }
+
+
