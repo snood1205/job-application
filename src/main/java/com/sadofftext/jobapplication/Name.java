@@ -17,9 +17,9 @@ public class Name{
     /**
     * This is the full constructor for the name class. This
     * constructor is for those with a middle name.
-    * @param firstName the firstName to set
-    * @param middleName the middleName to set 
-    * @param lastName the lastName to set
+    * @param firstName the first name to set
+    * @param middleName the middle name to set 
+    * @param lastName the last name to set
     */
     public Name(String firstName, String middleName, String lastName){
         this.firstName = firstName;
