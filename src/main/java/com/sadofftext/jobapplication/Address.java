@@ -51,7 +51,7 @@ public class Address{
         this.addressLine2 = "";
         this.city = city;
         this.state = state;
-        this.zipcode = zip;
+        this.zipcode = zipcode;
     }
 
     /** 
@@ -155,22 +155,67 @@ public class Address{
         return addressLine + "\n" + getCity() + ", " + getState() + "\n" + getZipcode();
     }
 
-    public JPanel getForm(){
+    public static JPanel getForm(){
         String[] stateAbbr = {"AK", "AL", "AR", "AZ", "CA", "CO", "CT", "DC", "DE", "FL", "GA", "GU", "HI", "IA",
                               "ID", "IL", "IN", "KS", "KY", "LA", "MA", "MD", "ME", "MI", "MN", "MO", "MS", "MT", 
                               "NC", "ND", "NE", "NH", "NJ", "NM", "NV", "NY", "OH", "OK", "OR", "PA", "PR", "RI", 
                               "SC", "SD", "TN", "TX", "UT", "VA", "VI", "VT", "WA", "WI", "WV", "WY"};
+
         JLabel lAddressLine1 = new JLabel("Address Line 1");
         JLabel lAddressLine2 = new JLabel("Address Line 2");
         JLabel lCity = new JLabel("City");
         JLabel lState = new JLabel("State");
         JLabel lZipcode = new JLabel("Zip Code");
+
         JTextField addressLine1 = new JTextField(40);
         JTextField addressLine2 = new JTextField(40);
         JTextField city = new JTextField(20);
-        JComboBox state = new JComboBox(stateAbbr);
+        JComboBox<String> state = new JComboBox<String>(stateAbbr);
         JTextField zipcode = new JTextField(6);
 
+        JPanel panel = new JPanel();
+        GridBagLayout gridbag = new GridBagLayout();
+        GridBagConstraints c = new GridBagConstraints();
+        panel.setLayout(gridbag);
+
+        c.gridx = 0;
+        c.gridy = 0;
+        panel.add(lAddressLine1, c);
+
+        c.gridx = 1;
+        c.gridwidth = GridBagConstraints.REMAINDER;
+        panel.add(addressLine1, c);
+
+        c.gridx = 0;
+        c.gridy = 1;
+        c.gridwidth = 1;
+        panel.add(lAddressLine2, c);
+
+        c.gridx = 1;
+        c.gridwidth = GridBagConstraints.REMAINDER;
+        panel.add(addressLine2, c);
+
+        c.gridx = 0;
+        c.gridy = 2;
+        c.gridwidth = 1;
+        panel.add(lCity, c);
+
+        c.gridx = 1;
+        panel.add(city, c);
+
+        c.gridx = 2;
+        panel.add(lState, c);
+
+        c.gridx = 3;
+        panel.add(state, c);
+
+        c.gridx = 4;
+        panel.add(lZipcode, c);
+
+        c.gridx = 5;
+        panel.add(zipcode, c);
+
+        return panel;
     }
 
     public static String getState(String stateAbbr){
