@@ -19,6 +19,8 @@ public class School{
     private String major;
     /* Degree acheived from school */
     private String degree;
+    /* The GPA */
+    private double gpa;
 
     /**
     * This is the constructor for the class school.
@@ -29,13 +31,14 @@ public class School{
     * @param major the major to set
     * @param degree the degree to set 
     */
-    public School(String name, Address address, int years, boolean graduated, String major, String degree){
+    public School(String name, Address address, int years, boolean graduated, String major, String degree, double gpa){
         this.name = name;
         this.address = address;
         this.years = years;
         this.graduated = graduated;
         this.major = major;
         this.degree = degree;
+        this.gpa = gpa;
     }
 
     /**
@@ -116,5 +119,21 @@ public class School{
     */
     public void setDegree(String degree){
         this.degree = degree;
+    }
+
+    /**
+    * This gets the GPA.
+    * @return the GPA
+    */
+    public double getGPA(){
+        return gpa;
+    }
+
+    /**
+    * This sets the GPA.
+    * @param gpa the GPA to set
+    */
+    public void setGPA(double gpa){
+        this.gpa = gpa;
     }
 }

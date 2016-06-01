@@ -27,7 +27,8 @@ public class Applicant{
     private boolean felon;
     private String felonExplain;
     private boolean dl;
-    private School[] highSchool;
-    private School[] higherEducation;
-    
+    private School highSchool;
+    private School univ;
+    private School highestDegree;
+    private Military military;
 }
