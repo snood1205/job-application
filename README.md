@@ -14,8 +14,7 @@ This is a form that you fill out and then the application is sent to someone via
 
 Here's a short explanation how to use `job-application`:
 
-* Use it
-* Profit
+`TODO: FILL IN`
 
 ## Contributing
 
@@ -27,13 +26,12 @@ Here's a short explanation how to use `job-application`:
 
 ## Requirements / Dependencies
 
-* This
-* That
-* As well as this
+* Java
+* Maven
 
 ## Version
 
-1.0.0
+Unreleased thusfar
 
 ## License
 
