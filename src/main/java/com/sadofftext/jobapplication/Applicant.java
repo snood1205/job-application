@@ -31,4 +31,7 @@ public class Applicant{
     private School univ;
     private School highestDegree;
     private Military military;
+    private Work work1;
+    private Work work2;
+    private Work work3;
 }
