@@ -38,7 +38,9 @@ import javax.swing.JPanel;
 */
 public class App {
   public static void main(String[] args) {
-    JPanel form = Date.getForm();
+    DateForm date = new DateForm();
+    date.createForm();
+    JPanel form = date.getPanel();
     JFrame frame = new JFrame();
     frame.add(form);
     frame.pack();
