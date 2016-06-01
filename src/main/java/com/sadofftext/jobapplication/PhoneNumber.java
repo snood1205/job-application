@@ -52,7 +52,7 @@ public class PhoneNumber{
     }
 
     /**
-    * This sets the exchange
+    * This sets the exchange.
     * @param exchange the exchange to set
     */
     public void setExchange(String exchange){
@@ -60,7 +60,7 @@ public class PhoneNumber{
     }
 
     /**
-    * This gets the last four digits
+    * This gets the last four digits.
     * @return the last four digits 
     */
     public String getLastFour(){
@@ -68,7 +68,7 @@ public class PhoneNumber{
     }
 
     /**
-    * This sets the last four digits
+    * This sets the last four digits.
     * @param lastFour the last four digits to set
     */
     public void setLastFour(String lastFour){

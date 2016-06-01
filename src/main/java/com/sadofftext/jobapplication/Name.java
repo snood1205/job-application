@@ -40,7 +40,7 @@ public class Name{
     }
 
     /**
-    * This gets the first name
+    * This gets the first name.
     * @return the first name 
     */
     public String getFirstName(){
@@ -48,7 +48,7 @@ public class Name{
     }
 
     /**
-    * This sets the first name
+    * This sets the first name.
     * @param firstName the first name to set 
     */
     public void setFirstName(String firstName){
@@ -56,7 +56,7 @@ public class Name{
     }
 
     /**
-    * This gets the middle name
+    * This gets the middle name.
     * @return the middle name 
     */
     public String getMiddleName(){
@@ -64,7 +64,7 @@ public class Name{
     }
 
     /**
-    * This sets the middle name
+    * This sets the middle name.
     * @param middleName the middle name to set 
     */
     public void setMiddleName(String middleName){
@@ -72,7 +72,7 @@ public class Name{
     }
 
     /**
-    * This gets the last name
+    * This gets the last name.
     * @return the last name 
     */
     public String getLastName(){
@@ -80,7 +80,7 @@ public class Name{
     }
 
     /**
-    * This sets the last name
+    * This sets the last name.
     * @param lastName the last name to set 
     */
     public void setLastName(String lastName){
