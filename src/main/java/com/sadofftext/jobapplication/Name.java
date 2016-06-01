@@ -86,4 +86,18 @@ public class Name{
     public void setLastName(String lastName){
         this.lastName = lastName;
     }
+
+    /**
+    * This override's Object's 
+    * <code>toString</code> method.
+    * @return string representation of a
+    * name in the format FIRST NAME MIDDLE NAME
+    * (if one exists) LAST NAME.
+    */
+    @Override
+    public String toString(){
+        if(getMiddleName().equals(""))
+            return getFirstName() + " " + getLastName();
+        return getFirstName() + " " + getMiddleName() + " " + getLastName();
+    }
 }

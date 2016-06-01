@@ -14,33 +14,76 @@ public class PhoneNumber{
     /* Stores the last four */
     private String lastFour;
 
-    public PhoneNumber(int areacode, int exchange, int lastFour){
+    /**
+    * This is the constructor for the 
+    * PhoneNumber class.
+    * @param areacode the area code (the first three digits)
+    * @param exchange the exchange (the middle three digits)
+    * @param lastFour the last four digits
+    */
+    public PhoneNumber(String areacode, String exchange, String lastFour){
         this.areacode = areacode;
         this.exchange = exchange;
         this.lastFour = lastFour;
     }
 
-    public int getAreacode(){
+    /**
+    * This gets the area code.
+    * @return the area code 
+    */
+    public String getAreacode(){
         return areacode;
     }
 
-    public void setAreacode(int areacode){
+    /**
+    * This sets the area code.
+    * @param areacode the area code to set 
+    */
+    public void setAreacode(String areacode){
         this.areacode = areacode;
     }
 
-    public int getExchange(){
+    /**
+    * This gets the exchange.
+    * @return the exchange
+    */
+    public String getExchange(){
         return exchange;
     }
 
-    public void setExchange(int exchange){
+    /**
+    * This sets the exchange
+    * @param exchange the exchange to set
+    */
+    public void setExchange(String exchange){
         this.exchange = exchange;
     }
 
-    public int getLastFour(){
+    /**
+    * This gets the last four digits
+    * @return the last four digits 
+    */
+    public String getLastFour(){
         return lastFour;
     }
 
-    public void setLastFour(int lastFour){
+    /**
+    * This sets the last four digits
+    * @param lastFour the last four digits to set
+    */
+    public void setLastFour(String lastFour){
         this.lastFour = lastFour;
+    }
+
+    /**
+    * This override's Object's 
+    * <code>toString</code> method.
+    * @return string representation of a
+    * phone number in the format (AREACODE) EXCHANGE
+    * - LAST FOUR.
+    */
+    @Override
+    public String toString(){
+        return "(" + getAreacode() + ") " + getExchange() + " - " + getLastFour();
     }
 }

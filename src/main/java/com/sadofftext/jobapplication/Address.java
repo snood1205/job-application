@@ -130,4 +130,25 @@ public class Address{
     public void setZipcode(String zipcode){
         this.zipcode = zipcode;
     }
+
+    /**
+    * This override's Object's 
+    * <code>toString</code> method.
+    * @return string representation of an
+    * address in the format:<br> 
+    * ADDRESS LINE 1 <br>
+    * ADDRESS LINE 2 (If exists) <br>
+    * CITY, STATE <br>
+    * ZIPCODE
+    */
+    @Override
+    public String toString(){
+        String addressLine;
+        if(getAddressLine2().equals("")){
+            addressLine = getAddressLine1();
+        } else{
+            addressLine = getAddressLine1() + "\n" + getAddressLine2();
+        }
+        return addressLine + "\n" + getCity() + ", " + getState() + "\n" + getZipcode();
+    }
 }
