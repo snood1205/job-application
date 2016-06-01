@@ -98,14 +98,14 @@ public class Applicant {
   /* Third reference */
   private Reference reference3;
 
-  public Applicant(Name name, SocialSecurity ssn, Address address, PhoneNumber home, PhoneNumber cell, 
-    int age, Date birthday, Email email, Date today, Day mon, Day tues, Day wed,
-    Day thur, Day fri, Day sat, Day sun, boolean fulltime, boolean parttime,
-    int hours, boolean workNights, Date available, boolean employedHereBefore, 
-    boolean certifiedToWork, boolean felon, String felonExplain, boolean dl, 
-    School highSchool, School univ, School highestDegree, Military military, 
-    Work work1, Work work2, Work work3, Reference reference1, 
-    Reference reference2, Reference reference3) {
+  public Applicant(Name name, SocialSecurity ssn, Address address, PhoneNumber home, 
+                  PhoneNumber cell, int age, Date birthday, Email email, Date today, Day mon, 
+                  Day tues, Day wed, Day thur, Day fri, Day sat, Day sun, boolean fulltime, 
+                  boolean parttime, int hours, boolean workNights, Date available, 
+                  boolean employedHereBefore, boolean certifiedToWork, boolean felon, 
+                  String felonExplain, boolean dl, School highSchool, School univ, 
+                  School highestDegree, Military military, Work work1, Work work2, Work work3,
+                  Reference reference1, Reference reference2, Reference reference3) {
     this.name = name;
     this.ssn = ssn;
     this.address = address;
@@ -164,7 +164,7 @@ public class Applicant {
   * This gets the SSN.
   * @return the SSN
   */
-  public SocialSecurity getSSN() {
+  public SocialSecurity getSsn() {
     return ssn;
   }
 
