@@ -37,4 +37,57 @@ public class NameForm extends Form{
   private JTextField fFirstName;
   private JTextField fMiddleName;
   private JTextField fLastName;
+  private Name name;
+
+  public NameForm(){
+    fFirstName = new JTextField(20);
+    fMiddleName = new JTextField(20);
+    fLastName = new JTextField(20);
+    name = null;
+  }
+
+  public JTextField getFFirstName(){
+    return fFirstName;
+  }
+
+  public JTextField getFMiddleName(){
+    return fMiddleName;
+  }
+
+  public JTextField getFLastName(){
+    return fLastName;
+  }
+
+  public Name getName(){
+    return name;
+  }
+
+  public void setName(Name name){
+    this.name = name;
+  }
+
+  public JPanel createForm(){
+    JPanel panel = new JPanel(new GridLayout(3,3));
+
+    JButton submit = new JButton("Submit");
+    submit.addActionListener(new ActionListener(){
+      public void actionPerformed(ActionEvent e){
+        String fn = getFFirstName().getText();
+        String mn = getFMiddleName().getText();
+        String ln = getFLastName().getText();
+        setName(new Name(fn, mn, ln));
+        setSubmitted(true);
+      }
+    });
+
+    panel.add(new JLabel("First Name"));
+    panel.add(new JLabel("Middle Name"));
+    panel.add(new JLabel("Last Name"));
+    panel.add(getFFirstName());
+    panel.add(getFMiddleName());
+    panel.add(getFLastName());
+    panel.add(submit);
+
+    return panel;
+  }
 }
