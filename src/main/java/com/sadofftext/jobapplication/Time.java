@@ -89,7 +89,7 @@ public class Time {
   * This gets if it is pm.
   * @return is pm?
   */
-  public boolean isPM() {
+  public boolean isPm() {
     return pm;
   }
 
@@ -97,7 +97,7 @@ public class Time {
   * This sets if it is pm.
   * @param pm sets if it is pm
   */
-  public void setPM(boolean pm) {
+  public void setPm(boolean pm) {
     this.pm = pm;
   }
 

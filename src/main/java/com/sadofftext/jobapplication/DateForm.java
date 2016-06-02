@@ -1,3 +1,27 @@
+/*
+* The MIT License (MIT)
+*
+* Copyright (c) 2016 Eli Sadoff
+*
+* Permission is hereby granted, free of charge, to any person obtaining a copy
+* of this software and associated documentation files (the "Software"), to deal
+* in the Software without restriction, including without limitation the rights
+* to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+* copies of the Software, and to permit persons to whom the Software is
+* furnished to do so, subject to the following conditions:
+
+* The above copyright notice and this permission notice shall be included in all
+* copies or substantial portions of the Software.
+
+* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+* IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+* FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+* AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+* LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+* OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+* SOFTWARE.
+*/
+
 package com.sadofftext.jobapplication;
 
 import java.awt.event.ActionEvent;
@@ -12,14 +36,13 @@ import javax.swing.JPanel;
 import javax.swing.JLabel;
 
 
-public class DateForm{
+public class DateForm extends Form {
   private JComboBox<Integer> fMonth;
   private JComboBox<Integer> fYear;
   private JComboBox<Integer> fDay;
   private Date date;
-  private boolean submitted;
 
-  public DateForm(){
+  public DateForm() {
     Integer[] days = IntStream.rangeClosed(1,31).boxed().toArray( Integer[]::new );
     Integer[] months = IntStream.rangeClosed(1,12).boxed().toArray( Integer[]::new );
     Integer[] years = IntStream.rangeClosed(1900,2016).boxed().toArray( Integer[]::new );
@@ -29,38 +52,29 @@ public class DateForm{
     fDay = new JComboBox<Integer>(days);
 
     date = null;
-    submitted = false;
   }
 
-  public JComboBox<Integer> getFMonth(){
+  public JComboBox<Integer> getFMonth() {
     return fMonth;
   }
 
-  public JComboBox<Integer> getFYear(){
+  public JComboBox<Integer> getFYear() {
     return fYear;
   }
 
-  public JComboBox<Integer> getFDay(){
+  public JComboBox<Integer> getFDay() {
     return fDay;
   }
 
-  public Date getDate(){
+  public Date getDate() {
     return date;
   }
 
-  public void setDate(Date date){
+  public void setDate(Date date) {
     this.date = date;
   }
 
-  public boolean isSubmitted(){
-    return submitted;
-  }
-
-  public void setSubmitted(boolean submitted){
-    this.submitted = submitted;
-  }
-
-  public JPanel createForm(){
+  public JPanel createForm() {
     JPanel panel = new JPanel();
     GridBagLayout gridbag = new GridBagLayout();
     GridBagConstraints c = new GridBagConstraints();

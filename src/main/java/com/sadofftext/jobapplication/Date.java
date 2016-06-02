@@ -163,47 +163,4 @@ public class Date {
     String year = Integer.toString(getYear());
     return month + " " + day + ", " + year;
   }
-
-  // /**
-  // * This static method creates a form to
-  // * get the information for the date. 
-  // * @return A panel with date information
-  // */
-  // public static JPanel getForm() {
-  //   JPanel panel = new JPanel();
-  //   GridBagLayout gridbag = new GridBagLayout();
-  //   GridBagConstraints c = new GridBagConstraints();
-  //   panel.setLayout(gridbag);
-
-  //   JComboBox<Integer> month = new JComboBox<Integer>(months);
-  //   JComboBox<Integer> year = new JComboBox<Integer>(years);
-  //   JComboBox<Integer> day = new JComboBox<Integer>(days);
-
-  //   JLabel info = new JLabel("Select date in MM/DD/YYYY format");
-
-  //   c.gridwidth = GridBagConstraints.REMAINDER;
-  //   c.gridx = 0;
-  //   c.gridy = 0;
-  //   panel.add(info, c);
-
-  //   c.gridy = 1;
-  //   c.gridwidth = 1;
-  //   panel.add(month, c);
-
-  //   c.gridx = 1;
-  //   panel.add(new JLabel("/"), c);
-
-  //   c.gridx = 2;
-  //   panel.add(day, c);
-
-  //   c.gridx = 3;
-  //   panel.add(new JLabel("/"), c);
-
-  //   c.gridx = 4;
-  //   panel.add(year, c);
-
-  //   return panel;
-  // }
 }
-
-

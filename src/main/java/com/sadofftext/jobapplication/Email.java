@@ -113,6 +113,16 @@ public class Email {
     c.gridx = 0;
     c.gridy = 0;
     c.gridwidth = GridBagConstraints.REMAINDER;
-    panel..add(label, c);
+    panel.add(label, c);
+
+    c.gridy = 1;
+    c.gridwidth = 1;
+    panel.add(username, c);
+
+    c.gridx = 1;
+    panel.add(new JLabel("@"), c);
+
+    c.gridx = 2;
+    panel.add(domain)
   }
 }
