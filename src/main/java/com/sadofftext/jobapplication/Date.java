@@ -24,8 +24,6 @@
 
 package com.sadofftext.jobapplication;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.util.stream.IntStream;
@@ -186,7 +184,6 @@ public class Date {
     JComboBox<Integer> day = new JComboBox<Integer>(days);
 
     JLabel info = new JLabel("Select date in MM/DD/YYYY format");
-    JLabel slash = new JLabel("/");
 
     c.gridwidth = GridBagConstraints.REMAINDER;
     c.gridx = 0;
@@ -198,13 +195,13 @@ public class Date {
     panel.add(month, c);
 
     c.gridx = 1;
-    panel.add(slash, c);
+    panel.add(new JLabel("/"), c);
 
     c.gridx = 2;
     panel.add(day, c);
 
     c.gridx = 3;
-    panel.add(slash, c);
+    panel.add(new JLabel("/"), c);
 
     c.gridx = 4;
     panel.add(year, c);
