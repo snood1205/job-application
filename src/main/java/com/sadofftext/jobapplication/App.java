@@ -38,7 +38,7 @@ import javax.swing.JPanel;
 */
 public class App {
   public static void main(String[] args) {
-    DayForm af = new DayForm("Monday");
+    EmailForm af = new EmailForm();
     JPanel form = af.createForm();
     JFrame frame = new JFrame();
     frame.add(form);
@@ -47,6 +47,6 @@ public class App {
     while(!af.isSubmitted()){
       Thread.yield();
     }
-    System.out.println(af.getDay().toString());
+    System.out.println(af.getEmail().toString());
   }
 }

@@ -99,30 +99,4 @@ public class Email {
   public String toString() {
     return getUsername() + "@" + getDomain();
   }
-
-  public static JPanel getForm(){
-    JLabel label = new JLabel("Enter your email address in the format username@domain.tld");
-    JTextField username = new JTextField(20);
-    JTextField domain = new JTextField(20);
-
-    JPanel panel = new JPanel();
-    GridBagLayout gridbag = new GridBagLayout();
-    GridBagConstraints c = new GridBagConstraints();
-    panel.addLayout(gridbag);
-
-    c.gridx = 0;
-    c.gridy = 0;
-    c.gridwidth = GridBagConstraints.REMAINDER;
-    panel.add(label, c);
-
-    c.gridy = 1;
-    c.gridwidth = 1;
-    panel.add(username, c);
-
-    c.gridx = 1;
-    panel.add(new JLabel("@"), c);
-
-    c.gridx = 2;
-    panel.add(domain)
-  }
 }
