@@ -120,4 +120,12 @@ public class Military {
   public void setDischargeDate(Date dischargeDate) {
     this.dischargeDate = dischargeDate;
   }
+
+  @Override
+  public String toString(){
+    if(hasServed()){
+      return "Applicant served in the " + getBranch() + " from " + getEntryDate().toString() +  " to " + getDischargeDate().toString();
+    }
+    return "Applicant did not serve in the military.";
+  }
 }

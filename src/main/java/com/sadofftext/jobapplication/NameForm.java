@@ -24,22 +24,17 @@
 
 package com.sadofftext.jobapplication;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.GridLayout;
+
+import javax.swing.JButton;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
 
-public abstract class Form{
-  private boolean submitted;
-
-  public Form(){
-    submitted = false;
-  }
-
-  public boolean isSubmitted(){
-    return submitted;
-  }
-
-  public void setSubmitted(boolean submitted){
-    this.submitted = submitted;
-  }
-
-  public abstract JPanel createForm();
+public class NameForm extends Form{
+  private JTextField fFirstName;
+  private JTextField fMiddleName;
+  private JTextField fLastName;
 }

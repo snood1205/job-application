@@ -61,6 +61,7 @@ public class EmailForm extends Form{
     this.email = email;
   }
 
+  @Override
   public JPanel createForm(){
     JLabel label = new JLabel("Enter your email address in the format username@domain.tld");
 

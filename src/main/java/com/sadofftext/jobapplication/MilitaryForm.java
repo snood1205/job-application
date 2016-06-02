@@ -35,44 +35,44 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JFrame;
 
-public class DayForm extends Form {
-  private String dayOfWeek;
-  private JComboBox<String> fAvailable;
-  private TimeForm fStart;
-  private TimeForm fEnd;
-  private Day day;
+public class MilitaryForm extends Form {
+  private JComboBox<String> fServed;
+  private JComboBox<String> fBranch;
+  private DateForm fEntryDate;
+  private DateForm fDischargeDate;
+  private Military military;
 
-  public DayForm(String dayOfWeek){
-    this.dayOfWeek = dayOfWeek;
-    String[] available = {"Yes","No"};
-    fAvailable = new JComboBox<String>(available);
-    fStart = new TimeForm();
-    fEnd = new TimeForm();
-    day = null;
+  public MilitaryForm(){
+    String[] served = {"Yes", "No"};
+    String[] branch = {"Army", "Navy", "Marine Corps", "Coast Guard", "Air Force"};
+    fServed = new JComboBox<String>(served);
+    fBranch = new JComboBox<String>(branch);
+    fEntryDate = new DateForm();
+    fDischargeDate = new DateForm();
   }
 
-  public String getDayOfWeek(){
-    return dayOfWeek;
+  public JComboBox<String> getFServed(){
+    return fServed;
   }
 
-  public JComboBox<String> getFAvailable(){
-    return fAvailable;
+  public JComboBox<String> getFBranch(){
+    return fBranch;
   }
 
-  public TimeForm getFStart(){
-    return fStart;
+  public DateForm getFEntryDate(){
+    return fEntryDate;
   }
 
-  public TimeForm getFEnd(){
-    return fEnd;
+  public DateForm getFDischargeDate(){
+    return fDischargeDate;
   }
 
-  public Day getDay(){
-    return day;
+  public Military getMilitary(){
+    return military;
   }
 
-  public void setDay(Day day){
-    this.day = day;
+  public void setMilitary(Military military){
+    this.military = military;
   }
 
   @Override
@@ -82,14 +82,14 @@ public class DayForm extends Form {
     GridBagConstraints c = new GridBagConstraints();
     panel.setLayout(gridbag);
 
-    JButton start = new JButton("Start Time");
-    JButton end = new JButton("End Time");
+    JButton start = new JButton("Entry Date");
+    JButton end = new JButton("Discharge Date");
     JButton submit = new JButton("Submit");
 
     start.addActionListener(new ActionListener(){
       public void actionPerformed(ActionEvent e){
         JFrame tf = new JFrame();
-        tf.add(getFStart().createForm());
+        tf.add(getFEntryDate().createForm());
         tf.pack();
         tf.setVisible(true);
       }
@@ -98,7 +98,7 @@ public class DayForm extends Form {
     end.addActionListener(new ActionListener(){
       public void actionPerformed(ActionEvent e){
         JFrame tf = new JFrame();
-        tf.add(getFEnd().createForm());
+        tf.add(getFDischargeDate().createForm());
         tf.pack();
         tf.setVisible(true);
       }
@@ -106,31 +106,38 @@ public class DayForm extends Form {
 
     submit.addActionListener(new ActionListener(){
       public void actionPerformed(ActionEvent e){
-        String dOW = getDayOfWeek();
-        Time st = getFStart().getTime();
-        Time end = getFEnd().getTime();
-        boolean av = getFAvailable().getSelectedIndex() == 0;
-        setDay(new Day(dOW, av, st, end));
+        boolean sr = getFServed().getSelectedIndex() == 0;
+        String br = getFBranch().getItemAt(getFBranch().getSelectedIndex());
+        Date st = getFEntryDate().getDate();
+        Date end = getFDischargeDate().getDate();
+        setMilitary(new Military(sr, br, st, end));
         setSubmitted(true);
       }
     });
 
     c.gridx = 0;
     c.gridy = 0;
-    panel.add(new JLabel("Are you available on " + getDayOfWeek() + "?"), c);
+    panel.add(new JLabel("Did you serve in the military?"), c);
 
     c.gridx = 1;
-    panel.add(getFAvailable());
+    panel.add(getFServed());
 
     c.gridx = 0;
     c.gridy = 1;
+    panel.add(new JLabel("In what branch did you serve?"));
+
+    c.gridx = 1;
+    panel.add(getFBranch());
+
+    c.gridx = 0;
+    c.gridy = 2;
     panel.add(start, c);
 
     c.gridx = 1;
     panel.add(end, c);
 
     c.gridx = 0;
-    c.gridy = 2;
+    c.gridy = 3;
     panel.add(submit, c);
 
     c.gridx = 1;

@@ -38,7 +38,7 @@ import javax.swing.JPanel;
 */
 public class App {
   public static void main(String[] args) {
-    EmailForm af = new EmailForm();
+    MilitaryForm af = new MilitaryForm();
     JPanel form = af.createForm();
     JFrame frame = new JFrame();
     frame.add(form);
@@ -47,6 +47,6 @@ public class App {
     while(!af.isSubmitted()){
       Thread.yield();
     }
-    System.out.println(af.getEmail().toString());
+    System.out.println(af.getMilitary().toString());
   }
 }
