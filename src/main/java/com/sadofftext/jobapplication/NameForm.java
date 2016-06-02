@@ -66,6 +66,7 @@ public class NameForm extends Form{
     this.name = name;
   }
 
+  @Override
   public JPanel createForm(){
     JPanel panel = new JPanel(new GridLayout(3,3));
 
