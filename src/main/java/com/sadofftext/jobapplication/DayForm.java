@@ -24,6 +24,17 @@
 
 package com.sadofftext.jobapplication;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JFrame;
+
 public class DayForm extends Form {
   private String dayOfWeek;
   private JComboBox<String> fAvailable;
@@ -33,7 +44,7 @@ public class DayForm extends Form {
 
   public DayForm(String dayOfWeek){
     this.dayOfWeek = dayOfWeek;
-    String available = {"Yes","No"};
+    String[] available = {"Yes","No"};
     fAvailable = new JComboBox<String>(available);
     fStart = new TimeForm();
     fEnd = new TimeForm();
@@ -69,5 +80,61 @@ public class DayForm extends Form {
     GridBagLayout gridbag = new GridBagLayout();
     GridBagConstraints c = new GridBagConstraints();
     panel.setLayout(gridbag);
+
+    JButton start = new JButton("Start Time");
+    JButton end = new JButton("End Time");
+    JButton submit = new JButton("Submit");
+
+    start.addActionListener(new ActionListener(){
+      public void actionPerformed(ActionEvent e){
+        JFrame tf = new JFrame();
+        tf.add(getFStart().createForm());
+        tf.pack();
+        tf.setVisible(true);
+      }
+    });
+
+    end.addActionListener(new ActionListener(){
+      public void actionPerformed(ActionEvent e){
+        JFrame tf = new JFrame();
+        tf.add(getFEnd().createForm());
+        tf.pack();
+        tf.setVisible(true);
+      }
+    });
+
+    submit.addActionListener(new ActionListener(){
+      public void actionPerformed(ActionEvent e){
+        String dOW = getDayOfWeek();
+        Time st = getFStart().getTime();
+        Time end = getFEnd().getTime();
+        boolean av = getFAvailable().getSelectedIndex() == 0;
+        setDay(new Day(dOW, av, st, end));
+        setSubmitted(true);
+      }
+    });
+
+    c.gridx = 0;
+    c.gridy = 0;
+    panel.add(new JLabel("Are you available on " + getDayOfWeek() + "?"), c);
+
+    c.gridx = 1;
+    panel.add(getFAvailable());
+
+    c.gridx = 0;
+    c.gridy = 1;
+    panel.add(start, c);
+
+    c.gridx = 1;
+    panel.add(end, c);
+
+    c.gridx = 0;
+    c.gridy = 2;
+    panel.add(submit, c);
+
+    c.gridx = 1;
+    panel.add(new JLabel(""), c);
+
+    return panel;
   }
 }
