@@ -23,3 +23,51 @@
 */
 
 package com.sadofftext.jobapplication;
+
+public class DayForm extends Form {
+  private String dayOfWeek;
+  private JComboBox<String> fAvailable;
+  private TimeForm fStart;
+  private TimeForm fEnd;
+  private Day day;
+
+  public DayForm(String dayOfWeek){
+    this.dayOfWeek = dayOfWeek;
+    String available = {"Yes","No"};
+    fAvailable = new JComboBox<String>(available);
+    fStart = new TimeForm();
+    fEnd = new TimeForm();
+    day = null;
+  }
+
+  public String getDayOfWeek(){
+    return dayOfWeek;
+  }
+
+  public JComboBox<String> getFAvailable(){
+    return fAvailable;
+  }
+
+  public TimeForm getFStart(){
+    return fStart;
+  }
+
+  public TimeForm getFEnd(){
+    return fEnd;
+  }
+
+  public Day getDay(){
+    return day;
+  }
+
+  public void setDay(Day day){
+    this.day = day;
+  }
+
+  public JPanel createForm(){
+    JPanel panel = new JPanel();
+    GridBagLayout gridbag = new GridBagLayout();
+    GridBagConstraints c = new GridBagConstraints();
+    panel.setLayout(gridbag);
+  }
+}

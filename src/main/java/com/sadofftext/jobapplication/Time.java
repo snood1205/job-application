@@ -118,7 +118,7 @@ public class Time {
       minutes = Integer.toString(getMinutes());
     }
 
-    if(isPM()) {
+    if(isPm()) {
       return hour + ":" + minutes + " PM";
     }
     return hour + ":" + minutes + " AM";
