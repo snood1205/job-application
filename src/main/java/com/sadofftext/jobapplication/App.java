@@ -38,10 +38,15 @@ import javax.swing.JPanel;
 */
 public class App {
   public static void main(String[] args) {
-    JPanel form = SocialSecurity.getForm();
+    AddressForm af = new AddressForm();
+    JPanel form = af.createForm();
     JFrame frame = new JFrame();
     frame.add(form);
     frame.pack();
     frame.setVisible(true);
+    while(!af.isSubmitted()){
+      Thread.yield();
+    }
+    System.out.println(af.getAddress().toString());
   }
 }
