@@ -166,6 +166,11 @@ public class Date {
     return month + " " + day + ", " + year;
   }
 
+  /**
+  * This static method creates a form to
+  * get the information for the date. 
+  * @return A panel with date information
+  */
   public static JPanel getForm() {
     Integer[] days = IntStream.rangeClosed(1,31).boxed().toArray( Integer[]::new );
     Integer[] months = IntStream.rangeClosed(1,12).boxed().toArray( Integer[]::new );
