@@ -38,7 +38,7 @@ import javax.swing.JPanel;
 */
 public class App {
   public static void main(String[] args) {
-    SocialSecurityForm af = new SocialSecurityForm();
+    WorkForm af = new WorkForm();
     JPanel form = af.createForm();
     JFrame frame = new JFrame();
     frame.add(form);
@@ -47,6 +47,6 @@ public class App {
     while(!af.isSubmitted()){
       Thread.yield();
     }
-    System.out.println(af.getSocialSecurity().toString());
+    System.out.println(af.getWork().toString());
   }
 }

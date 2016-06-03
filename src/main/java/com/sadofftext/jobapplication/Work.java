@@ -303,4 +303,22 @@ public class Work {
   public void setContact(boolean contact) {
     this.contact = contact;
   }
+
+  @Override
+  public String toString(){
+    String cp = "Company:\t" + getCompany() + "\n";
+    String sv = "Supervisor:\t" + getSupervisor().toString() + "\n";
+    String hw = "Hours per week:\t" + Integer.toString(getHoursPerWeek()) + "\n";
+    String ad = "Address:\n" + getAddress().toString() + "\n";
+    String sd = "Start date:\t" + getStartDate().toString() + "\n";
+    String ed = "End date:\t" + getEndDate().toString() + "\n";
+    String ss = "Starting Salary:\t" + getStartingSalary().toString() + "\n";
+    String es = "Ending Salary:\t" + getEndingSalary().toString() + "\n";
+    String nb = "Phone Number:\t" + getNumber().toString() + "\n";
+    String jt = "Job Title:\t" + getJobTitle() + "\n";
+    String rl = "Reason for leaving:\t" + getReasonForLeaving() + "\n";
+    String dt = "Duties:\n" + getDuties() + "\n";
+    String ct = "Contact:\t" + Boolean.toString(canContact()) + "\n";
+    return cp + sv + hw + ad + sd + ed + ss + es + nb + jt + rl + dt + ct;
+  }
 }
