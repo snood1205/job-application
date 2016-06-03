@@ -80,4 +80,11 @@ public class Salary {
   public void setRate(double rate) {
     this.rate = rate;
   }
+
+  public String toString(){
+    if(isHourly()){
+      return "$" + String.valueOf(getRate()) + " per hour";
+    }
+    return "$" + String.valueOf(getRate()) + " per year";
+  }
 }
