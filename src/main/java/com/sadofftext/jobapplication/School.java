@@ -86,6 +86,22 @@ public class School {
   }
 
   /**
+  * This gets the address.
+  * @return the address
+  */
+  public Address getAddress(){
+    return address;
+  }
+
+  /**
+  * This sets the address.
+  * @param address the address to est
+  */
+  public void setAddress(Address address){
+    this.address = address;
+  }
+
+  /**
   * This gets the years.
   * @return the years.
   */
@@ -163,5 +179,17 @@ public class School {
   */
   public void setGpa(double gpa) {
     this.gpa = gpa;
+  }
+
+  @Override
+  public String toString(){
+    String nm = "Name:\t" + getName() + "\n";
+    String ad = "Address:\n" + getAddress().toString() + "\n";
+    String yr = "Years:\t" + Integer.toString(getYears()) + "\n";
+    String gr = "Graduated:\t" + Boolean.toString(hasGraduated()) + "\n";
+    String mj = "Major:\t" + getMajor() + "\n";
+    String dg = "Degree:\t" + getDegree() + "\n";
+    String gpa = "GPA:\t" + Double.toString(getGpa());
+    return nm + ad + yr + gr + mj + dg + gpa; 
   }
 }
