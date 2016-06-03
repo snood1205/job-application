@@ -37,7 +37,7 @@ public class Reference {
   /* The name */
   private Name name;
   /* The phone number */
-  private PhoneNumber number;
+  private PhoneNumber phoneNumber;
   /* The circumstances of acquaintance */
   private String circumstances;
 
@@ -47,9 +47,9 @@ public class Reference {
   * @param number the phone number to set
   * @param circumstances the circumstances to set
   */
-  public Reference(Name name, PhoneNumber number, String circumstances) {
+  public Reference(Name name, PhoneNumber phoneNumber, String circumstances) {
     this.name = name;
-    this.number = number;
+    this.phoneNumber = phoneNumber;
     this.circumstances = circumstances;
   }
 
@@ -73,16 +73,16 @@ public class Reference {
   * This gets the phone number.
   * @return the phone number
   */
-  public PhoneNumber getNumber() {
-    return number;
+  public PhoneNumber getPhoneNumber() {
+    return phoneNumber;
   }
 
   /**
   * This sets the phone number.
   * @param number the phone number to set
   */
-  public void setNumber(PhoneNumber number) {
-    this.number = number;
+  public void setPhoneNumber(PhoneNumber phoneNumber) {
+    this.phoneNumber = phoneNumber;
   }
 
   /**
@@ -99,5 +99,12 @@ public class Reference {
   */
   public void setCircumstances(String circumstances) {
     this.circumstances = circumstances;
+  }
+
+  public String toString(){
+    String name = "Name:\t" + getName().toString();
+    String pn = "Phone Number:\t" + getPhoneNumber().toString();
+    String ci = "Circumstances:\n" + getCircumstances();
+    return name + "\n" + pn + "\n" + circumstances;
   }
 }

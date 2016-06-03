@@ -38,7 +38,7 @@ import javax.swing.JPanel;
 */
 public class App {
   public static void main(String[] args) {
-    PhoneNumberForm af = new PhoneNumberForm();
+    ReferenceForm af = new ReferenceForm();
     JPanel form = af.createForm();
     JFrame frame = new JFrame();
     frame.add(form);
@@ -47,6 +47,6 @@ public class App {
     while(!af.isSubmitted()){
       Thread.yield();
     }
-    System.out.println(af.getPhoneNumber().toString());
+    System.out.println(af.getReference().toString());
   }
 }
