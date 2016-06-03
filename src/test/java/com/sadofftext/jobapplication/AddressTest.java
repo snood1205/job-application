@@ -46,17 +46,48 @@ public class AddressTest{
 
   @Test
   public void testEquals(){
-    assertEquals(full,full);
-    assertEquals(abbr,abbr);
-    assertNotEquals(abbr,full);
-    assertNotEquals(full,"");
-    assertEquals(empty4,empty5);
-    assertNotEquals(empty4,null);
+    assertEquals(full, full);
+    assertEquals(abbr, abbr);
+    assertNotEquals(abbr, full);
+    assertNotEquals(full, "");
+    assertEquals(empty4, empty5);
+    assertNotEquals(empty4, null);
   }
 
   @Test
   public void testToString(){
     String fullAssumed = "123 Main St.\n#1A\nAnytown, Maine\n12345";
+    String abbrAssumed = "1 First Ave.\nCenterville, Pennsylvania\n16789";
+    String emptyAssumed = "\n, \n";
     assertEquals(fullAssumed, full.toString());
+    assertEquals(abbrAssumed, abbr.toString());
+    assertEquals(emptyAssumed, empty4.toString());
+  }
+
+  @Test
+  public void testGetState(){
+    String[] states = {
+      "Alaska", "Alabama", "Arkansas", "Arizona", "California", "Colorado", "Connecticut",
+      "Washington, DC", "Delaware", "Florida", "Georgia", "Guam", "Hawai'i", "Iowa", "Illinois",
+      "Indiana", "Kansas", "Kentucky", "Louisiana", "Massachusetts", "Maryland", "Maine", 
+      "Michigan", "Minnesota", "Missouri", "Mississippi", "Montana", "North Carolina", 
+      "North Dakota", "Nebraska", "New Hampshire", "New Jersey", "New Mexico", "Nevada", 
+      "New York", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Puerto Rico", "Rhode Island", 
+      "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Virginia", "Virgin Islands",
+      "Vermont", "Washington", "Wisconsin", "West Virginia", "Wyoming"
+    };
+
+    String[] abbr = {
+      "AK", "AL", "AR", "AZ", "CA", "CO", "CT", "DC", "DE", "FL", "GA", "GU", "HI", "IA", "IL", 
+      "IN", "KS", "KY", "LA", "MA", "MD", "ME", "MI", "MN", "MO", "MS", "MT", "NC", "ND", "NE", 
+      "NH", "NJ", "NM", "NV", "NY", "OH", "OK", "OR", "PA", "PR", "RI", "SC", "SD", "TN", "TX",
+      "UT", "VA", "VI", "VT", "WA", "WI", "WV", "WY"
+    };
+
+    for(int i = 0; i < states.length; i++){
+      assertEquals(Address.getState(abbr[i]),states[i]);
+    }
+
+    assertEquals(Address.getState("XX"),"");
   }
 }
