@@ -80,9 +80,7 @@ public class Applicant {
   /* Is certified to work in the US */
   private boolean certifiedToWork;
   /* Has commited a felony */
-  private boolean felon;
-  /* Explanation for felony committed */
-  private String felonExplain;
+  private Felon felon;
   /* Has a drivers license */
   private boolean dl;
   /* Last high school attended */
@@ -110,10 +108,10 @@ public class Applicant {
                   PhoneNumber cell, int age, Date birthday, Email email, Date today, Day mon, 
                   Day tues, Day wed, Day thur, Day fri, Day sat, Day sun, boolean fulltime, 
                   boolean parttime, int hours, boolean workNights, Date available, 
-                  boolean employedHereBefore, boolean certifiedToWork, boolean felon, 
-                  String felonExplain, boolean dl, School highSchool, School univ, 
-                  School highestDegree, Military military, Work work1, Work work2, Work work3,
-                  Reference reference1, Reference reference2, Reference reference3) {
+                  boolean employedHereBefore, boolean certifiedToWork, Felon felon, 
+                  boolean dl, School highSchool, School univ, School highestDegree, 
+                  Military military, Work work1, Work work2, Work work3, Reference reference1,
+                  Reference reference2, Reference reference3) {
     this.name = name;
     this.ssn = ssn;
     this.address = address;
@@ -138,7 +136,6 @@ public class Applicant {
     this.employedHereBefore = employedHereBefore;
     this.certifiedToWork = certifiedToWork;
     this.felon = felon;
-    this.felonExplain = felonExplain;
     this.dl = dl;
     this.highSchool = highSchool;
     this.univ = univ;
@@ -524,7 +521,7 @@ public class Applicant {
   * This gets if the applicant is a felon.
   * @return if the applicant is a felon
   */
-  public boolean isFelon() {
+  public Felon getFelon() {
     return felon;
   }
 
@@ -532,24 +529,8 @@ public class Applicant {
   * This sets if the applicant is a felon.
   * @param felon sets if the applicant is a felon
   */
-  public void setFelon(boolean felon) {
+  public void setFelon(Felon felon) {
     this.felon = felon;
-  }
-
-  /**
-  * This gets the explanation for the felony committed.
-  * @return the explanation for the felony
-  */
-  public String getFelonExplain() {
-    return felonExplain;
-  }
-
-  /**
-  * This sets the explanation for the felony committed.
-  * @param felonExplain the explanation for the felony
-  */
-  public void setFelonExplain(String felonExplain) {
-    this.felonExplain = felonExplain;
   }
 
   /**

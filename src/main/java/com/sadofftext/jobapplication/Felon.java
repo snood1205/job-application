@@ -24,42 +24,36 @@
 
 package com.sadofftext.jobapplication;
 
-import java.lang.reflect.Method;
+public class Felon{
+  private boolean felon;
+  private String explain;
 
-import javax.swing.JFrame;
-import javax.swing.JPanel;
+  public Felon(boolean felon, String explain){
+    this.felon = felon;
+    this.explain = explain;
+  }
 
-/**
-* This class should not
-* exist in the final product.
-* It is used to see how the forms
-* look in the interim.
-* 
-* TODO: Remove before publishing
-* @author Eli Sadoff
-*/
-public class App {
-  public static void main(String[] args){
-    ApplicantForm af = new ApplicantForm();
-    JPanel form = af.createForm();
-    JFrame frame = new JFrame();
-    frame.add(form);
-    frame.pack();
-    frame.setVisible(true);
-    while(!af.isSubmitted()){
-      Thread.yield();
+  public boolean isFelon(){
+    return felon;
+  }
+
+  public void setFelon(boolean felon){
+    this.felon = felon;
+  }
+
+  public String getExplain(){
+    return explain;
+  }
+
+  public void setExplain(String explain){
+    this.explain = explain;
+  }
+
+  @Override
+  public String toString(){
+    if(isFelon()){
+      return "Applicant is felon because " + getExplain();
     }
-    try{
-      Method[] methods = Applicant.class.getMethods();
-      Applicant a = af.getApplicant();
-      for(Method m : methods){
-        if(m.getName().startsWith("get")){
-          System.out.println(m.getName());
-          System.out.println(m.invoke(a));
-        }
-      }
-    } catch(Exception e){
-      System.out.println(e.getStackTrace());
-    }
+    return "Applicant is not felon";
   }
 }
