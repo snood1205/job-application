@@ -180,6 +180,20 @@ public class Address {
     return addressLine + "\n" + getCity() + ", " + getState() + "\n" + getZipcode();
   }
 
+  @Override
+  public boolean equals(Object o){
+    if(o instanceof Address){
+      Address a = (Address) o;
+      boolean al1 = getAddressLine1().equals(a.getAddressLine1());
+      boolean al2 = getAddressLine2().equals(a.getAddressLine2());
+      boolean cy = getCity().equals(a.getCity());
+      boolean st = getState().equals(a.getState());
+      boolean zc = getZipcode().equals(a.getZipcode());
+      return al1 && al2 && cy && st && zc;
+    }
+    return false;
+  }
+
   public static String getState(String stateAbbr) {
     switch (stateAbbr) {
       case "AK": 
