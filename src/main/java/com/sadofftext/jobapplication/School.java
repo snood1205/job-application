@@ -153,7 +153,7 @@ public class School {
   * This gets the GPA.
   * @return the GPA
   */
-  public double getGPA() {
+  public double getGpa() {
     return gpa;
   }
 
@@ -161,7 +161,7 @@ public class School {
   * This sets the GPA.
   * @param gpa the GPA to set
   */
-  public void setGPA(double gpa) {
+  public void setGpa(double gpa) {
     this.gpa = gpa;
   }
 }
