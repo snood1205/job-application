@@ -10,7 +10,7 @@ This is a form that you fill out and then the application is sent to someone via
 3. Install the project using `maven`:
   `mvn package`
 4. Open the package using `java`:
-  `java -cp target/job-application-1.0-SNAPSHOT.jar com.sadofftext.jobapplication.App`
+  `java -cp target/job-application-0.0.1-PREALPHA.jar com.sadofftext.jobapplication.App`
 5. After usage run:
   `mvn clean`
 
