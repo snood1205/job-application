@@ -41,7 +41,7 @@ import javax.swing.JComboBox;
 * @since 1.0.0
 * @author Eli Sadoff
 */
-public class Date {
+public class Date implements Comparable<Date> {
   /* Stores the day */
   private int day;
   /* Stores the month */
@@ -174,5 +174,24 @@ public class Date {
       return day && month && year;
     }
     return false;
+  }
+
+  @Override
+  public int compareTo(Date d){
+    if(getYear() > d.getYear()){
+      return 1;
+    } else if(getYear() < d.getYear()){
+      return -1;
+    } else if(getMonth() > d.getMonth()){
+      return 1;
+    } else if(getMonth() < d.getMonth()){
+      return -1;
+    } else if(getDay() > d.getDay()){
+      return 1;
+    } else if(getDay() < d.getDay()){
+      return -1;
+    } else{
+      return 0;
+    }
   }
 }

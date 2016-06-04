@@ -51,6 +51,27 @@ public class DateTest{
   }
 
   @Test
+  public void testCompareTo(){
+    // Test year
+    Date jan116 = new Date(1, 1, 2016);
+    Date dec3115 = new Date(31, 12, 2015);
+    assertEquals(1, jan116.compareTo(dec3115));
+    assertEquals(-1, dec3115.compareTo(jan116));
+
+    // Test month
+    Date oct31 = new Date(31, 10, 2016);
+    Date dec25 = new Date(25, 12, 2016);
+    assertEquals(1, dec25.compareTo(oct31));
+    assertEquals(-1, oct31.compareTo(dec25));
+
+    // Test day
+    Date jan4 = new Date(4, 1, 2016);
+    Date jan7 = new Date(7, 1, 2016);
+    assertEquals(1, jan7.compareTo(jan4));
+    assertEquals(-1, jan4.compareTo(jan7));
+  }
+
+  @Test
   public void testToString(){
     String zeroAssumed = " 0, 0";
     String oneAssumed = "January 1, 1";

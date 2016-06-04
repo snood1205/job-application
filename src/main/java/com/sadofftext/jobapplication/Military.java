@@ -128,4 +128,20 @@ public class Military {
     }
     return "Applicant did not serve in the military.";
   }
+
+  @Override
+  public boolean equals(Object o){
+    if(o instanceof Military){
+      Military m = (Military) o;
+      boolean sr = (hasServed() == m.hasServed());
+      if(!hasServed()){
+        return sr;
+      }
+      boolean br = getBranch().equals(m.getBranch());
+      boolean ed = getEntryDate().equals(m.getEntryDate());
+      boolean dd = getDischargeDate().equals(m.getDischargeDate());
+      return sr && br && ed && dd;
+    }
+    return false;
+  }
 }
