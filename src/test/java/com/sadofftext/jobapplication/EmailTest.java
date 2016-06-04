@@ -24,50 +24,37 @@
 
 package com.sadofftext.jobapplication;
 
-public class Felon{
-  private boolean felon;
-  private String explain;
+import org.junit.Before;
+import org.junit.Test;
 
-  public Felon(boolean felon, String explain){
-    this.felon = felon;
-    this.explain = explain;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
+
+public class EmailTest{
+  private Email zero;
+  private Email sample;
+
+  @Before
+  public void setup(){
+    zero = new Email("", "");
+    sample = new Email("example", "sadofftext.com");
   }
 
-  public boolean isFelon(){
-    return felon;
+  @Test
+  public void testEquals(){
+    assertEquals(zero, zero);
+    assertEquals(zero, new Email("", ""));
+    assertNotEquals(zero, new Email("", "test.com"));
+    assertNotEquals(zero, sample);
+    assertEquals(sample, sample);
+    assertEquals(sample, new Email("example", "sadofftext.com"));
   }
 
-  public void setFelon(boolean felon){
-    this.felon = felon;
-  }
-
-  public String getExplain(){
-    return explain;
-  }
-
-  public void setExplain(String explain){
-    this.explain = explain;
-  }
-
-  @Override
-  public String toString(){
-    if(isFelon()){
-      return "Applicant is felon because " + getExplain();
-    }
-    return "Applicant is not felon";
-  }
-
-  @Override
-  public boolean equals(Object o){
-    if(o instanceof Felon){
-      Felon f = (Felon) o;
-      boolean fl = (isFelon() == f.isFelon());
-      if(!isFelon()){
-        return fl;
-      }
-      boolean ex = getExplain().equals(f.getExplain());
-      return fl && ex;
-    }
-    return false;
+  @Test
+  public void testToString(){
+    String assumedZero = "@";
+    String assumedSample = "example@sadofftext.com";
+    assertEquals(sample.toString(), assumedSample);
+    assertEquals(zero.toString(), assumedZero);
   }
 }

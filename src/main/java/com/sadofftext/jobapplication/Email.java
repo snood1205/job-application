@@ -99,4 +99,15 @@ public class Email {
   public String toString() {
     return getUsername() + "@" + getDomain();
   }
+
+  @Override
+  public boolean equals(Object o){
+    if(o instanceof Email){
+      Email e = (Email) o;
+      boolean un = getUsername().equals(e.getUsername());
+      boolean dm = getDomain().equals(e.getDomain());
+      return un && dm;
+    }
+    return false;
+  }
 }
