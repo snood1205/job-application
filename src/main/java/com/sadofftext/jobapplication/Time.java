@@ -123,4 +123,16 @@ public class Time {
     }
     return hour + ":" + minutes + " AM";
   }
+
+  @Override
+  public boolean equals(Object o){
+    if(o instanceof Time){
+      Time t = (Time) o;
+      boolean hr = (getHour() == t.getHour());
+      boolean mn = (getMinutes() == t.getMinutes());
+      boolean pm = (isPm() == t.isPm());
+      return hr && mn && pm;
+    }
+    return false;
+  }
 }

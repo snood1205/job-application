@@ -136,4 +136,28 @@ public class Day {
     }
     return "Not available on " + getDayOfWeek() + ".";
   }
+
+  public boolean equals(Object o){
+    if(o instanceof Day){
+      Day d = (Day) o;
+      boolean dow = getDayOfWeek().equals(d.getDayOfWeek());
+      boolean av = (isAvailable() == d.isAvailable());
+      boolean st;
+      boolean en;
+
+      if(getStart() != null){
+        st = getStart().equals(d.getStart());
+      } else {
+        st = (d.getStart() == null);
+      }
+
+      if(getEnd() != null){
+        en = getEnd().equals(d.getEnd());
+      } else {
+        en = (d.getEnd() == null);
+      }
+      return dow && av && st && en;
+    }
+    return false;
+  }
 }
