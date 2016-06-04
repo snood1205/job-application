@@ -57,6 +57,7 @@ public class School {
   * @param graduated set if graduated
   * @param major the major to set
   * @param degree the degree to set 
+  * @param gpa the gpa to set
   */
   public School(String name, Address address, int years, boolean graduated, String major, 
     String degree, double gpa) {

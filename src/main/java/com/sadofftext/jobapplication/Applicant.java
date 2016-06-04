@@ -319,7 +319,7 @@ public class Applicant {
 
   /**
   * This sets the availability on Tuesday.
-  * @param mon the availability on Tuesday to set
+  * @param tues the availability on Tuesday to set
   */
   public void setTues(Day tues) {
     this.tues = tues;
@@ -335,7 +335,7 @@ public class Applicant {
 
   /**
   * This sets the availability on Wednesday.
-  * @param mon the availability on Wednesday to set
+  * @param wed the availability on Wednesday to set
   */
   public void setWed(Day wed) {
     this.wed = wed;
@@ -351,7 +351,7 @@ public class Applicant {
 
   /**
   * This sets the availability on Thursday.
-  * @param mon the availability on Thursday to set
+  * @param thur the availability on Thursday to set
   */
   public void setThur(Day thur) {
     this.thur = thur;
@@ -367,7 +367,7 @@ public class Applicant {
 
   /**
   * This sets the availability on Friday.
-  * @param mon the availability on Friday to set
+  * @param fri the availability on Friday to set
   */
   public void setFri(Day fri) {
     this.fri = fri;
@@ -383,7 +383,7 @@ public class Applicant {
 
   /**
   * This sets the availability on Saturday.
-  * @param mon the availability on Saturday to set
+  * @param sat the availability on Saturday to set
   */
   public void setSat(Day sat) {
     this.sat = sat;
@@ -399,7 +399,7 @@ public class Applicant {
 
   /**
   * This sets the availability on Sunday.
-  * @param mon the availability on Sunday to set
+  * @param sun the availability on Sunday to set
   */
   public void setSun(Day sun) {
     this.sun = sun;
@@ -694,14 +694,15 @@ public class Applicant {
   }
 
   /**
-  * This sets the third reference.
-  * @param reference3 the third reference to set
+  * This gets the third reference.
+  * @return the third reference
   */
   public Reference getReference3() {
     return reference3;
   }
 
   /**
+  * This sets the third reference.
   * @param reference3 the reference3 to set
   */
   public void setReference3(Reference reference3) {

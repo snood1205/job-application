@@ -66,7 +66,7 @@ public class Address {
   /**
   * This is the abbreviated constructor for Address.
   * This is to be used by people with a single line address.
-  * @param addressLine1 the address line to set
+  * @param address the address line to set
   * @param city the city to set
   * @param state the state to set
   * @param zipcode the zip code to set
@@ -105,7 +105,7 @@ public class Address {
 
   /**
   * This sets the option second address line
-  * @param addressLine1 the optional second address line to set
+  * @param addressLine2 the optional second address line to set
   */
   public void setAddressLine2(String addressLine2) {
     this.addressLine2 = addressLine2;
@@ -121,7 +121,7 @@ public class Address {
 
   /**
   * This sets the city
-  * @param addressLine1 the city to set
+  * @param city the city to set
   */
   public void setCity(String city) {
     this.city = city;
@@ -137,7 +137,7 @@ public class Address {
 
   /**
   * This sets the state
-  * @param addressLine1 the state to set
+  * @param state the state to set
   */
   public void setState(String state) {
     this.state = state;
@@ -153,7 +153,7 @@ public class Address {
 
   /**
   * This sets the zip code
-  * @param addressLine1 the zip code to set
+  * @param zipcode the zip code to set
   */
   public void setZipcode(String zipcode) {
     this.zipcode = zipcode;

@@ -115,7 +115,7 @@ public class Day {
 
   /**
   * This sets the end time.
-  * @return the end time.
+  * @param end the end time to set
   */
   public void setEnd(Time end) {
     this.end = end;

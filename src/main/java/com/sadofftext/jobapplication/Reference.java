@@ -44,7 +44,7 @@ public class Reference {
   /**
   * This is the constructor for the class Reference.
   * @param name the name to set
-  * @param number the phone number to set
+  * @param phoneNumber the phone number to set
   * @param circumstances the circumstances to set
   */
   public Reference(Name name, PhoneNumber phoneNumber, String circumstances) {
@@ -79,7 +79,7 @@ public class Reference {
 
   /**
   * This sets the phone number.
-  * @param number the phone number to set
+  * @param phoneNumber the phone number to set
   */
   public void setPhoneNumber(PhoneNumber phoneNumber) {
     this.phoneNumber = phoneNumber;

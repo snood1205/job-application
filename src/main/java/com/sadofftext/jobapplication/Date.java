@@ -163,4 +163,16 @@ public class Date {
     String year = Integer.toString(getYear());
     return month + " " + day + ", " + year;
   }
+
+  @Override
+  public boolean equals(Object o){
+    if(o instanceof Date){
+      Date d = (Date) o;
+      boolean day = (getDay() == d.getDay());
+      boolean month = (getMonth() == d.getMonth());
+      boolean year = (getYear() == d.getYear());
+      return day && month && year;
+    }
+    return false;
+  }
 }
