@@ -48,5 +48,21 @@ public class DayTest {
   public void testEquals(){
     assertEquals(zeroFalse, zeroFalse);
     assertNotEquals(zeroFalse, zeroTrue);
+    assertNotEquals(oneFalse, oneTrue);
+    assertNotEquals(oneFalse, zeroFalse);
+    assertNotEquals(oneTrue, zeroTrue);
+    assertEquals(zeroFalse, new Day("", false, null, null));
+  }
+
+  @Test
+  public void testToString(){
+    String assumedZeroFalse = "Not available on .";
+    String assumedZeroTrue = "Available on  from 0:00 PM to 0:00 PM.";
+    String assumedOneFalse = "Not available on Monday.";
+    String assumedOneTrue = "Available on Monday from 1:00 AM to 1:00 PM.";
+    assertEquals(assumedZeroFalse, zeroFalse.toString());
+    assertEquals(assumedZeroTrue, zeroTrue.toString());
+    assertEquals(assumedOneFalse, oneFalse.toString());
+    assertEquals(assumedOneTrue, oneTrue.toString());
   }
 }
