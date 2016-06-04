@@ -24,10 +24,12 @@
 
 package com.sadofftext.jobapplication;
 
-import java.lang.reflect.Method;
+import java.awt.GridLayout;
 
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JOptionPane;
 
 /**
 * This class should not
@@ -49,17 +51,33 @@ public class App {
     while(!af.isSubmitted()){
       Thread.yield();
     }
-    try{
-      Method[] methods = Applicant.class.getMethods();
-      Applicant a = af.getApplicant();
-      for(Method m : methods){
-        if(m.getName().startsWith("get")){
-          System.out.println(m.getName());
-          System.out.println(m.invoke(a));
-        }
-      }
-    } catch(Exception e){
-      System.out.println(e.getStackTrace());
+    frame.setVisible(false);
+
+    EmailForm ef = new EmailForm();
+    form = new JPanel(new GridLayout(2,1));
+    form.add(new JLabel("Enter email address to send to"));
+    form.add(ef.createForm());
+    frame.add(form);
+    frame.pack();
+    frame.setVisible(true);
+    while(!ef.isSubmitted()){
+      Thread.yield();
     }
+
+    NameForm nf = new NameForm();
+    form = new JPanel(new GridLayout(2,1));
+    form.add(new JLabel("Enter name to send to"));
+    form.add(nf.createForm());
+    frame.add(form);
+    frame.pack();
+    frame.setVisible(true);
+    while(!nf.isSubmitted()){
+      Thread.yield();
+    }
+
+    Applicant a = af.getApplicant();
+    Email e = ef.getEmail();
+    Name n = nf.getName();
+    Applicant.send(a, e, n);
   }
 }

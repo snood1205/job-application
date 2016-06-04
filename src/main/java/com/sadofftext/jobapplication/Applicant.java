@@ -24,6 +24,19 @@
 
 package com.sadofftext.jobapplication;
 
+import java.lang.reflect.Method;
+import java.lang.StringBuilder;
+import java.util.Properties;
+
+import javax.mail.internet.AddressException;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
+import javax.mail.Message;
+import javax.mail.MessagingException;
+import javax.mail.Session;
+import javax.mail.Transport;
+
+
 /**
 * This class contains
 * all the information of 
@@ -707,5 +720,48 @@ public class Applicant {
   */
   public void setReference3(Reference reference3) {
     this.reference3 = reference3;
+  }
+
+  @Override
+  public String toString(){
+    StringBuilder result = new StringBuilder();
+    try{
+      Method[] methods = Applicant.class.getMethods();
+      for(Method m : methods){
+        if(m.getName().startsWith("get")){
+          result.append(m.getName().substring(3, m.getName().length() - 1));
+          result.append("\t");
+          result.append(m.invoke(this));
+          result.append("\n");
+        }
+      }
+    } catch(Exception e){
+      System.out.println(e.getStackTrace());
+    }
+    return result.toString();
+  }
+
+  public static boolean send(Applicant applicant, Email destination, Name destinationName){
+    return send(applicant.toString(), destination, destinationName);
+  }
+
+  public static boolean send(String string, Email destination, Name destinationName){
+    Properties props = new Properties();
+    Session session = Session.getDefaultInstance(props, null);
+
+    try {
+      Message msg = new MimeMessage(session);
+      msg.setFrom(new InternetAddress("noreply@sadofftext.com", "DO NOT REPLY"));
+      msg.addRecipient(Message.RecipientType.TO, 
+        new InternetAddress(destination.toString(), destinationName.toString()));
+      msg.setSubject("New Applicant!");
+      msg.setText(string);
+      Transport.send(msg);
+      return true;
+    } catch(Exception e){
+      System.out.println(e.getStackTrace());
+      return false;
+    }
+
   }
 }
