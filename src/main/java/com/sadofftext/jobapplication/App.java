@@ -42,42 +42,46 @@ import javax.swing.JOptionPane;
 */
 public class App {
   public static void main(String[] args){
-    ApplicantForm af = new ApplicantForm();
-    JPanel form = af.createForm();
-    JFrame frame = new JFrame();
-    frame.add(form);
-    frame.pack();
-    frame.setVisible(true);
-    while(!af.isSubmitted()){
-      Thread.yield();
-    }
-    frame.setVisible(false);
+    // ApplicantForm af = new ApplicantForm();
+    // JPanel form = af.createForm();
+    // JFrame frame = new JFrame();
+    // frame.add(form);
+    // frame.pack();
+    // frame.setVisible(true);
+    // while(!af.isSubmitted()){
+    //   Thread.yield();
+    // }
+    // frame.setVisible(false);
 
-    EmailForm ef = new EmailForm();
-    form = new JPanel(new GridLayout(2,1));
-    form.add(new JLabel("Enter email address to send to"));
-    form.add(ef.createForm());
-    frame.add(form);
-    frame.pack();
-    frame.setVisible(true);
-    while(!ef.isSubmitted()){
-      Thread.yield();
-    }
+    // EmailForm ef = new EmailForm();
+    // form = new JPanel(new GridLayout(2,1));
+    // form.add(new JLabel("Enter email address to send to"));
+    // form.add(ef.createForm());
+    // frame.add(form);
+    // frame.pack();
+    // frame.setVisible(true);
+    // while(!ef.isSubmitted()){
+    //   Thread.yield();
+    // }
 
-    NameForm nf = new NameForm();
-    form = new JPanel(new GridLayout(2,1));
-    form.add(new JLabel("Enter name to send to"));
-    form.add(nf.createForm());
-    frame.add(form);
-    frame.pack();
-    frame.setVisible(true);
-    while(!nf.isSubmitted()){
-      Thread.yield();
-    }
+    // NameForm nf = new NameForm();
+    // form = new JPanel(new GridLayout(2,1));
+    // form.add(new JLabel("Enter name to send to"));
+    // form.add(nf.createForm());
+    // frame.add(form);
+    // frame.pack();
+    // frame.setVisible(true);
+    // while(!nf.isSubmitted()){
+    //   Thread.yield();
+    // }
 
-    Applicant a = af.getApplicant();
-    Email e = ef.getEmail();
-    Name n = nf.getName();
-    Applicant.send(a, e, n);
+    // Applicant a = af.getApplicant();
+    // Email e = ef.getEmail();
+    // Name n = nf.getName();
+    // Applicant.send(a, e, n);
+    String test = "Test";
+    Email send = new Email("snood1205","gmail.com");
+    Name name = new Name("Eli","David","Sadoff");
+    System.out.println(Applicant.send(test, send, name));
   }
 }
